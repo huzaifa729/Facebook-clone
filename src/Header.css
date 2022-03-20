@@ -51,7 +51,7 @@
 .header-middle{
     display: flex;
     align-items: center;
-   
+   cursor: pointer;
 }
 
 .header-option{
@@ -69,7 +69,7 @@
 .header-option:hover{
     background-color: grey;
     transition: all 0.7s ease-in;
-    border-radius: 5px;
+    border-radius: 50px;
     color: white;
 }
 

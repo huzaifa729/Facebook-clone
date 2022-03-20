@@ -29,7 +29,7 @@ function Header(active) {
                    <HomeIcon active fontSize='large'/>
                </div>
                <div className='header-option'>
-                   <AssistantPhotoIcon  fontSize='large'/>
+                   <AssistantPhotoIcon   fontSize='large'/>
                </div>
                <div className='header-option'>
                    <SubscriptionsIcon fontSize='large'/>
