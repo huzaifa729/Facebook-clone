@@ -1,0 +1,100 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0.75);
+}
+
+.facebook-img{
+    width: 60px;
+    object-fit: contain;
+}
+
+.headr-wrap{
+    display: flex;
+    align-items: center;
+  
+}
+
+.header-input{
+    display: flex;
+     flex: 1;
+    border-radius: 50px;
+    height: 40px;
+    align-items: center;
+   background-color: #e4e6eb;
+ 
+}
+
+.header-input > input{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+
+ .search-icon{
+    font-size: 18px;
+    margin-left: 6px;
+
+}
+
+/* .MuiSvgIcon-root */
+
+
+.header-middle{
+    display: flex;
+    align-items: center;
+   
+}
+
+.header-option{
+    color:grey;
+    font-weight: 600;
+  padding: 0 34px;
+}
+
+
+.header-option--active{
+  color: #1b74e4;
+  border-bottom: 3px solid #1b74e4;
+}
+
+.header-option:hover{
+    background-color: grey;
+    transition: all 0.7s ease-in;
+    border-radius: 5px;
+    color: white;
+}
+
+
+.header-left{
+    display: flex;
+     align-items: center; 
+    margin-right: 25px;
+     margin-top: -5px; 
+}
+
+.For-Avatar{
+    display: flex;
+     align-items: center; 
+
+}
+
+.For-Avatar > h4{
+    margin-left: 3px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-lefticons{
+    color: black;
+    padding: 0px 8px;
+    font-weight: 800;
+}

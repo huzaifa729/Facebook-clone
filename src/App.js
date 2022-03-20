@@ -1,11 +1,18 @@
 
 import './App.css';
 import Header from './Header';
+import Slider from './Slider';
 
 function App() {
   return (
     <div className="App">
+      
      <Header/>
+
+     <div className='app-body'>
+       <Slider/>
+     </div>
+
     </div>
   );
 }
