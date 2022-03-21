@@ -1,7 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Login.css'
 
 function Login() {
+  const [email, SetEmail] = useState('')
+  const [password, SetPassword] = useState('')
+
+  const signin = e =>{
+     e.preventDefault();
+  }
+
+  const register = e =>{
+    e.preventDefault();
+  }
+
   return (
     <div  className='Login'>
 
@@ -15,13 +26,13 @@ function Login() {
       <div className='login-right'>
        <form>
            <div className='login-input'>
-               <input type='text' placeholder='Email address'/>
-               <input type='password' placeholder='password'/>
+               <input type='text' value={email} onChange={e => SetEmail(e.target.value)} placeholder='Email address'/>
+               <input type='password' value={password} onChange={e => SetPassword(e.target.value)} placeholder='password'/>
            </div>
        </form>
 
          <div className='login-btn'>
-          <button className='logn-btn'>Login</button>
+          <button className='logn-btn' type='submit' onClick={signin}>Login</button>
          </div>
 
            <div className='sign-with'>
@@ -36,7 +47,7 @@ function Login() {
       </div>
       <div className='hr'></div>
         <div className='create-account'>
-        <button className="create">Create your Account</button>
+        <button className="create" type='submit' onClick={register}>Create your Account</button>
         </div>
 
         <div className='end-line'>
