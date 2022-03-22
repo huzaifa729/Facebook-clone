@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
+import { auth } from './firebase'
+import {useHistory} from 'react-router-dom';
 import './Login.css'
 
 function Login() {
+  const history = useHistory();
   const [email, SetEmail] = useState('')
   const [password, SetPassword] = useState('')
 
@@ -11,6 +14,14 @@ function Login() {
 
   const register = e =>{
     e.preventDefault();
+
+      auth
+      .createUserWithEmailAndPassword(email,password)
+      .then((auth)=>{
+        console.log(auth);
+     
+      })
+       .catch(error => alert(error.message))
   }
 
   return (
