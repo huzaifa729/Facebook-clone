@@ -1,15 +1,27 @@
 import React, {useState} from 'react'
-import { auth } from './firebase'
-import {useHistory} from 'react-router-dom';
+import { auth, provider } from './firebase'
+import { actionTypes } from './reducer';
+import { useStateValue } from './StateProvider'
 import './Login.css'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Login() {
-  const history = useHistory();
+  const history = useHistory()
+  const [state, dispatch] = useStateValue()
   const [email, SetEmail] = useState('')
   const [password, SetPassword] = useState('')
 
   const signin = e =>{
      e.preventDefault();
+     auth
+     .signInWithEmailAndPassword(email,password)
+     .then((auth)=>{
+      //  console.log(auth);
+        if(auth){
+          history.push('/');
+        }
+     })
+      .catch(error => alert(error.message))
   }
 
   const register = e =>{
@@ -23,6 +35,25 @@ function Login() {
       })
        .catch(error => alert(error.message))
   }
+
+
+  const signwithgoogle = e =>{
+    auth.signInWithPopup(provider)
+    .then((result) =>{
+  
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        })
+     
+         
+      console.log(result)
+    })
+    .catch(error => alert(error.message))
+  }
+
+
+  
 
   return (
     <div  className='Login'>
@@ -50,12 +81,15 @@ function Login() {
                <p className='sign-in'>Sign up with</p>
            </div>
 
-           <div className='google-btn'>
-         <button>
+           <div className='google-btn' >
+         <button type='submit' onClick={signwithgoogle}>
               <img className='google-icon' src="//assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/google-icon.5c764c55.svg" alt=""/>
               <span>Continue with Google</span>
      </button>
+
+  
       </div>
+
       <div className='hr'></div>
         <div className='create-account'>
         <button className="create" type='submit' onClick={register}>Create your Account</button>

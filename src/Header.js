@@ -10,14 +10,26 @@ import ForumIcon from '@mui/icons-material/Forum';
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './Header.css';
+import { useStateValue } from './StateProvider';
+import { Link } from 'react-router-dom';
+// import { auth } from './firebase';
 
 function Header(active) {
+const [{user}, dispatch]  = useStateValue();
+
+// const handleAuthentication = () =>{
+//   if (user){
+//     auth.signOut();
+//   }
+// }
+
   return (
     <div className="header">
         <div className="headr-wrap">
+       <Link to = '/'>
             <img className="facebook-img"
              src="https://img.icons8.com/fluency/2x/facebook-new.png" alt="hbh"/>
-
+     </Link>
              <div className='header-input'>
                    <SearchIcon className='search-icon' /> 
                   <input type='text' placeholder="Search Facebook"/>
@@ -41,8 +53,8 @@ function Header(active) {
 
              <div className='header-left'>
               <div className='For-Avatar'>
-                <Avatar/>
-                <h4>Huzaifa Dabir</h4>
+                <Avatar src={user.photoURL} />
+                <h4 >{user.displayName}</h4>
               </div>
 
                      <div className='header-lefticons'>

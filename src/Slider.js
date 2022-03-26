@@ -1,11 +1,14 @@
 import React from 'react'
 import './Slider.css'
 import Sliderow from './Sliderow'
+import { useStateValue } from './StateProvider'
 
 function Slider() {
+  const [{user}, dispatch] = useStateValue();
   return (
+
     <div className='slider'>
-       <Sliderow src="https://img.icons8.com/fluency/2x/facebook-new.png" title="Huzaifa Dabir"/>
+       <Sliderow src={user.photoURL} title={user.displayName}/>
        
        
        <Sliderow src="https://static.xx.fbcdn.net/rsrc.php/v3/y8/r/S0U5ECzYUSu.png" title="Friends" />
