@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
 import AssistantPhotoIcon from '@mui/icons-material/AssistantPhoto';
@@ -12,16 +12,24 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './Header.css';
 import { useStateValue } from './StateProvider';
 import { Link } from 'react-router-dom';
-// import { auth } from './firebase';
+import FeedbackIcon from '@mui/icons-material/Feedback';
+import SettingsIcon from '@mui/icons-material/Settings';
+import HelpIcon from '@mui/icons-material/Help';
+import NightsStayIcon from '@mui/icons-material/NightsStay';
+import LogoutIcon from '@mui/icons-material/Logout';
+ import { auth } from './firebase';
+
 
 function Header(active) {
 const [{user}, dispatch]  = useStateValue();
 
-// const handleAuthentication = () =>{
-//   if (user){
-//     auth.signOut();
-//   }
-// }
+const handle = () =>{
+  if(user){
+     auth.signOut();
+  }
+}
+
+
 
   return (
     <div className="header">
@@ -54,7 +62,7 @@ const [{user}, dispatch]  = useStateValue();
              <div className='header-left'>
               <div className='For-Avatar'>
                 <Avatar src={user.photoURL} />
-                <h4 >{user.displayName}</h4>
+                <h4 >{!user ? user.email: user.displayName}</h4>
               </div>
 
                      <div className='header-lefticons'>
@@ -67,12 +75,47 @@ const [{user}, dispatch]  = useStateValue();
                      <CircleNotificationsIcon fontSize='medium'/>
                     </div>
                     <div className='header-lefticons'>
-                     <ExpandMoreIcon fontSize='medium'/>
-                    </div>
-                 </div>
+                     <ExpandMoreIcon fontSize='medium' />
 
+                     <div className="drop-down">
+                            
+                           <div className='information'>
+                             <Avatar src={user.photoURL} />
+                             <div className='info-inside'>
+                               <span className='email'>{user.email}</span>
+                               <span className='name'>{user.displayName}</span>
+                             </div>
+                           </div>
+                   
+                          <div className='text-image'>
+                            <span className='img'><FeedbackIcon fontSize="small"/></span>
+                            <span className="text">Give Feedback</span>
+                          </div>
 
-       </div>
+                          <div className='text-image'>
+                            <span className='img'><SettingsIcon fontSize="small"/></span>
+                            <span className="text">Setting & Privacy</span>
+                          </div>
+
+                          <div className='text-image'>
+                            <span className='img'><HelpIcon fontSize="small"/></span>
+                            <span className="text">Help & Support</span>
+                          </div>
+
+                          <div className='text-image'>
+                            <span className='img'><NightsStayIcon fontSize="small"/></span>
+                            <span className="text">Dark Mode</span>
+                          </div>
+
+                          <div className='text-image' onClick={handle}>
+                            <span className='img'><LogoutIcon fontSize="small"/></span>
+                            <span className="text">Logout</span>
+                          </div>
+
+                   </div>
+                </div>
+          </div>
+ </div>
 
   )
 }

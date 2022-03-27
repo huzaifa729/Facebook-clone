@@ -6,6 +6,7 @@ import Login from './Login';
 import Slider from './Slider';
 import { useStateValue } from './StateProvider'
 
+
  import {  BrowserRouter as Router,
   Switch, Route, Link } from "react-router-dom";
 
@@ -38,8 +39,10 @@ function App() {
     <div className="app">
       <Switch>
   {!user ? (
+   
+
     <Login/>
-  
+    
   ):(
     <>
     <Route path='/'>

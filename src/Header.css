@@ -99,3 +99,66 @@
     font-weight: 800;
 }
 
+.drop-down{
+    content: "";
+    position: absolute;
+    background-color: black;
+    visibility: hidden;
+    opacity: 3;
+    top: 72%;
+    color: white;
+    box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.4);
+    border-radius: 5px;
+    height: max-content;
+    margin-left: -230px;
+    width: 270px;
+ 
+}
+
+
+.header-lefticons:hover .drop-down{
+    visibility: visible;
+    opacity: 3;
+}
+
+.information{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.info-inside{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-inside > .email{
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.info-inside > .name{
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.text-image{
+     display: flex;
+    align-items: center; 
+    padding: 15px;
+ border-top: 5px solid #2a2a2a;
+   cursor: pointer;
+}
+
+
+
+.text-image > .img{
+    margin-top: 5px;
+}
+
+.text-image >  .text{
+   margin-left: 5px;
+}
