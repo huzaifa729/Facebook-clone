@@ -9,6 +9,7 @@ import { useStateValue } from './StateProvider'
 
  import {  BrowserRouter as Router,
   Switch, Route, Link } from "react-router-dom";
+import Feed from './Feed';
 
 
 function App() {
@@ -38,11 +39,11 @@ function App() {
  <Router>
     <div className="app">
       <Switch>
-  {!user ? (
+  {!user  ?  (
    
 
     <Login/>
-    
+  
   ):(
     <>
     <Route path='/'>
@@ -51,6 +52,7 @@ function App() {
 
     <div className='app-body'>
       <Slider/>
+      <Feed/>
   </div>
   </>
   )}
