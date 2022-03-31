@@ -10,6 +10,7 @@ import { useStateValue } from './StateProvider'
  import {  BrowserRouter as Router,
   Switch, Route, Link } from "react-router-dom";
 import Feed from './Feed';
+import Widgets from './Widgets';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
     <div className='app-body'>
       <Slider/>
       <Feed/>
+      <Widgets/>
   </div>
   </>
   )}

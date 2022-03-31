@@ -6,7 +6,20 @@
       background-size: cover;
        background-repeat: no-repeat; 
        height: 200px;
-       width: 120px;
-     
+       width: 150px;
+      margin: 0px 7px;
+   
+}
+
+.story-avatar{
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.story-title{
+  padding: 20px;
+  color: rgb(87, 45, 126);
+  margin-top: 35px;
+   
 }
 

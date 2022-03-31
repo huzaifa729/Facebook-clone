@@ -1,11 +1,13 @@
 
 
 .slider{
-   border-right: 1px solid #e6ecf0;
+   /* border-right: 10px solid #e6ecf0; */
+   border-right: 5px solid black;
     margin-top: 10px;
     flex: 0.3;
    margin-right: 20px;
    margin-left: 20px;
+ 
 }
 
 
