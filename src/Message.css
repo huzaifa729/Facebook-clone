@@ -2,30 +2,70 @@
 
 .meassage{
     margin-top: 20px;
-    box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.4);
     background-color: white;
-    height: 200px;
+    height: max-content;
    width: max-content;
    margin-left: auto;
    margin-right: auto;
 }
 
-.message-input{
+.message-input > form{
     display: flex;
     align-items: center;
    margin-left: 10px;
    margin-top: 20px;
+   flex: 1;
 }
 
 
 .message-input input{
-    flex: 1;
+    /* flex: 1; */
     outline: none;
     border: none;
-    background-color: #e4e6eb;
+     background-color: #e4e6eb; 
     margin: 0 10px;
     border-radius: 25px;
+   padding: 15px 25px;
+   font-size: 16px;
+   /* background-color: black; */
+   outline-width: 0;
+}
 
+.essage{
+    flex: 1;
+    margin: 3px 34px;
+}
+
+.message-option{
+    display: flex;
+    justify-content: space-evenly;
+ margin-top: 25px;
+ margin-bottom: 20px;
+}
+
+
+.message-icons-nam{
+
+    display: flex;
+    align-items: center;
+}
+
+.icon-name{
+    margin-left: 5px;
+  font-weight: 600;
+}
+
+.fxtw5amg{
+   color: #f3425f;
+}
+
+.j58f7537 {
+    color: #45bd62;
+}
+
+.mu8pnim0 {
+    color: #f7b928;
 }
 
 
