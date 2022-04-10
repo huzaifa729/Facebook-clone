@@ -1,13 +1,29 @@
 import { Avatar } from '@material-ui/core'
 import React, {useState} from 'react'
+import db from './firebase';
 import './Message.css'
 import { useStateValue } from './StateProvider';
+import firebase from 'firebase/compat/app';
+
 function Message() {
   const [{user},dispatch]=useStateValue()
   const [input, SetInput] = useState('')
   const [imageUrl, SetImageUrl] = useState('')
 
+const handleSubmit = (e)=>{
+  e.preventDefault();
 
+    db.collection("posts").add({
+      message: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      profilephoto: user.photoURL,
+      username: user.displayName,
+      image:imageUrl
+    })
+
+  SetInput("");
+  SetImageUrl("");
+}
 
   return (
     <div className='meassage'>
@@ -15,8 +31,11 @@ function Message() {
       <form>
         <Avatar src={user.photoURL}/>
        
-        <input className='essage' value={input} onChange={e => SetInput(e.target.value)} placeholder="What's  on your Minds?" />
-        <input  value={imageUrl} onChange={e => SetImageUrl(e.target.value)} type='text' placeholder="imageURL?"/> 
+        <input className='essage' value={input} onChange={(e) => SetInput(e.target.value)} placeholder="What's  on your Minds?" />
+
+        <input  value={imageUrl} onChange={(e) => SetImageUrl(e.target.value)} type='text' placeholder="imageURL?"/> 
+
+        <button onClick={handleSubmit} type="submit">Hidden Button</button>
         </form>
       </div>
         
